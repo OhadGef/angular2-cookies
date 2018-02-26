@@ -1,0 +1,30 @@
+
+<div *ngIf="station">
+
+
+  <div id="flex-container">
+
+
+    <div id="station-detail">
+      <h2>{{ station.name | uppercase }} Details</h2>
+      <div><span>id: </span>{{station.id}}</div>
+      <label>name:
+        <input [(ngModel)]="station.name" placeholder="name">
+      </label><br>
+      <label>coffee:
+        <input [(ngModel)]="station.coffee" placeholder="number of capsules">
+      </label><br>
+      <label>cookies:
+        <input [(ngModel)]="station.cookies" placeholder="number of cookies">
+      </label>
+    </div>
+
+    <div id="map">
+      <app-map></app-map>
+    </div>
+
+  </div>
+  <button (click)="save()">save</button>
+  <button (click)="goBack()">Cancel</button>
+</div>
+

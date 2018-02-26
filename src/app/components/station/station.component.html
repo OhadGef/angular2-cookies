@@ -1,0 +1,24 @@
+<div class="container">
+  <div>
+    <h2>My Stations:</h2>
+    <ul class="stations">
+      <li *ngFor="let station of stations">
+        <a routerLink="/detail/{{station.id}}">
+          <span class="badge">{{station.id}}</span> {{station.name}}
+        </a>
+        <button class="delete" title="delete station"
+                (click)="delete(station)">x
+        </button>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="newStation">
+    <label>Station name:
+      <input  #newStation/>
+    </label>
+    <button (click)="add(this); newStation.value=''"> add </button>
+  </div>
+
+</div>

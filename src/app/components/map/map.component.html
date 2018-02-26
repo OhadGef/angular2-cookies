@@ -1,0 +1,16 @@
+<div>
+  <img *ngIf="!loading" src='../../img/loading.jpg' />
+</div>
+  <div *ngIf="loading">
+  <ac-map>
+    <ac-layer acFor="let point of points$" [context]="this">
+      <ac-label-desc props="{
+        text: point.name,
+        position: point.position,
+        fillColor: point.color
+    }">
+      </ac-label-desc>
+
+    </ac-layer>
+  </ac-map>
+</div>
